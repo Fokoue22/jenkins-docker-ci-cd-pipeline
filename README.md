@@ -52,7 +52,7 @@ git pull https://github.com/Fokoue22/docker-and-jenkins-integration.git
 
 ![Alt text](images/docker-image-build-automation-job.png)
 
-### 6. Let setup our Git plugin on Jenkins. This is done to link our Jenkins with our repo created on Git
+### 3. Let setup our Git plugin on Jenkins. This is done to link our Jenkins with our repo created on Git
 1. Create a `New Item` with name `docker-image-build` select an item type `Freestyle project` and press `OK`
 2. Click on the newly created job `my-first-jenkins-job`
 3. Go to `Configure` add a `description`. Now go to `Source Code Management` click `Git`  filled all the blank space all 
@@ -62,14 +62,14 @@ git pull https://github.com/Fokoue22/docker-and-jenkins-integration.git
 
 ![Alt text](images/git-cred-jenkins.png)
 
-### 7. Let look for a Plugins that will help us to publish a docker image and see the pipeline. 
+### 4. Let look for a Plugins that will help us to publish a docker image and see the pipeline. 
 1. Go to `Manage Jenkins` click on `Plugins` then go to `Available Plugins`
 2. On Available Plugins click on the search bar and type `CloudBees Docker Build and Publish` & `stage view` Select the Plugins and Install 
 4. Go to `Install Plugins` to see the docker plugin that have been install  
 ![Alt text](images/install-plugins-jenkins.png)
 ![Alt text](images/stage-view-plugins.png)
 
-### 8. Now let Installed docker on our Ubuntu server in other for us to use the plugin install above linux server:
+### 5. Now let Installed docker on our Ubuntu server in other for us to use the plugin install above linux server:
 - Take up you privilage. the first command for ubuntu and the second for linux. 
 ```
 sudo su - ubuntu
@@ -128,7 +128,7 @@ sudo apt-get update
 ![Alt text](images/install-docker.png)
 
 
-### 9. Create a Build Steps in Jenkins for Docker
+### 6. Create a Build Steps in Jenkins for Docker
 1. Go to our  a `New Item` with name `docker-image-build` created above
 2. Go down to `Build Steps` and chose `Docker Build and Publish` 
 3. On `Repository Name` add a repo-name present in your Docker Hub account. Add a `Tag e.g v2` leave everything default. Then add `Registry credentials` for your DockerHub account 
@@ -155,7 +155,7 @@ sudo apt-get update
 
 
 
-### 10. Login to docker hub using ubuntu server.
+### 7. Login to docker hub using ubuntu server.
 ```
 docker login
 ```
