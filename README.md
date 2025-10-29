@@ -169,6 +169,7 @@ pipeline {
 6. Go down to `Pipeline` at `at the edge of Script` and motified it as shown below
 7. Update the Souce stage credentail with your own `Generate Pipeline Script` done above
 8. Save and run your build by clicking on `Build Now`
+9. Optional: let add `${BUILD_NUMBER}` to our code copy from `Global Variable Reference`. This will automaticatly add the version number to our dockerhub.
 ```
 pipeline {
     agent any
@@ -184,7 +185,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building our Docker image'
-                sh ' docker build -t fokoue/jenkins_thomas_container:v4 .'
+                sh ' docker build -t fokoue/jenkins_thomas_container:v${BUILD_NUMBER} .'
             }
         }
 
