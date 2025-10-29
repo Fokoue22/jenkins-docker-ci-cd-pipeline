@@ -157,10 +157,11 @@ pipeline {
 ### 7. Deploy Stage: let edite our Pipeline edge of Script
 1. Let go back to `Configure` of the newly created pipeline juste below the `Hello World` pipeline we created and select `Pipeline Syntax`
 2. From there let select `sh:Shell Script`
-3. On the Shell Script add the following command 
+3. On the Shell Script add the following command that will allow us to build an image based on our Dockerfile
 ```
  docker build -t fokoue/jenkins_thomas_container:v4 .
 ```
+
 4. Then click on `Generate Pipeline Script` and copy it 
 ![Alt text](images/build-syntax.png)
 
@@ -186,6 +187,7 @@ pipeline {
             steps {
                 echo 'Building our Docker image'
                 sh ' docker build -t fokoue/jenkins_thomas_container:v${BUILD_NUMBER} .'
+                sh 'docker images'
             }
         }
 
