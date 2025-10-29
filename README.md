@@ -211,6 +211,54 @@ pipeline {
 ![Alt text](images/deploy-stage-dockerhub.png) 
 ![Alt text](images/dockerhub-deployed.png) 
 
+### 8. Running Stage: let edite our Pipeline edge of Script
+1. Let add the running stage to our pipeline. So we need to run the image with the comand below
+```
+  sh ' docker run --name testing -t -d -p 80:80 ${DOCKERHUB_REPO}:v${BUILD_NUMBER}'
+```
+2. After this use your public IP to view the contain of that image
+```
+pipeline {
+    agent any
+    environment {
+        DOCKERHUB_REPO = 'fokoue/jenkins_thomas_container'
+        DOCKERHUB_CREDS  = credentials('docker-credd')
+    }
+    stages {
+        stage('Source') {
+            steps {
+                echo 'Logging into our GitHub account'
+                git branch: 'main', credentialsId: 'github-cred', url: 'https://github.com/Fokoue22/docker-and-jenkins-integration.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Building our Docker image'
+                sh ' docker build -t ${DOCKERHUB_REPO}:v${BUILD_NUMBER} .'
+                sh 'docker images'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Deploying our image to DockerHub'
+                sh 'docker login -u ${DOCKERHUB_CREDS_USR} -p ${DOCKERHUB_CREDS_PSW}'
+                sh 'docker push ${DOCKERHUB_REPO}:v${BUILD_NUMBER}'
+            }
+        }
+       stage('Run') {
+            steps {
+                echo 'Running our Docker image'
+                sh ' docker run --name testing -t -d -p 80:80 ${DOCKERHUB_REPO}:v${BUILD_NUMBER}'
+            }
+        }
+    }
+}
+```
+![Alt text](images/jenkins-pipeline.png)
+![Alt text](images/jenkins-pipeline.png)
+
 
 ### 5. Now let Installed docker on our Ubuntu server in other for us to use the plugin install above linux server:
 - Take up you privilage. the first command for ubuntu and the second for linux. 
