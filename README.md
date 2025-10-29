@@ -80,6 +80,7 @@ git pull https://github.com/Fokoue22/docker-and-jenkins-integration.git
 1. Let go back to `Configure` of the newly created pipeline
 2. Go down to `Pipeline` at `at the edge of Script` and motified it as shown below
 3. Update the Souce stage credentail with your own `Generate Pipeline Script` done above 
+5. Save and run your build by clicking on `Build Now`
 ```
 pipeline {
     agent any
@@ -108,11 +109,22 @@ pipeline {
 ```
 ![Alt text](images/source-stage-git.png)
 
-### 6. Source Stage: let edite our Pipeline edge of Script
-1. Let go back to `Configure` of the newly created pipeline
-2. Go down to `Pipeline` at `at the edge of Script` and motified it as shown below
-3. Update the Souce stage credentail with your own `Generate Pipeline Script` done above
+### 6. Bluild Stage: let edite our Pipeline edge of Script
+1. Let go back to `Configure` of the newly created pipeline juste below the `Hello World` pipeline we created and select `Pipeline Syntax`
+2. From there let select `sh:Shell Script`
+3. On the Shell Script add the following command 
+```
+ docker build -t fokoue/jenkins_thomas_container:v4 .
+```
+4. Then click on `Generate Pipeline Script` and copy it 
+![Alt text](images/build-syntax.png)
 
+
+5. Let go back to `Configure` of the newly created pipeline
+6. Go down to `Pipeline` at `at the edge of Script` and motified it as shown below
+7. Update the Souce stage credentail with your own `Generate Pipeline Script` done above
+8. Save and run your build by clicking on `Build Now`
+![Alt text](images/build-syntax.png)
 
 
 
