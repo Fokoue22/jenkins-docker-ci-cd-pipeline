@@ -42,17 +42,8 @@ git pull https://github.com/Fokoue22/docker-and-jenkins-integration.git
 ```
 ![Alt text](images/repo-for-jenkins.png)
 
-### 2. Let create our first jenkins pipeline that display `Hello World!` 
-1. click on `New Item`(That means i would like to create a job)
-2. Enter an item name `docker-image-build-automation-job` select an item type `Pipeline` and press `OK`
-3. Click on the newly created job `docker-image-build-automation-job`
-4. Go to `Configure` add a `description` go down to `Pipeline` at `at the edge of Script` select `Hello World`
-5. Save and run your build by clicking on `Build Now`
-6. On your `Build History` on the left click on the first build "#1" and go to `Console Output` and you will see your result.
 
-![Alt text](images/docker-image-build-automation-job.png)
-
-### 3. Let setup our Git plugin on Jenkins. This is done to link our Jenkins with our repo created on Git
+### 2. Let setup our Git plugin on Jenkins. This is done to link our Jenkins with our repo created on Git
 1. Create a `New Item` with name `docker-image-build` select an item type `Freestyle project` and press `OK`
 2. Click on the newly created job `my-first-jenkins-job`
 3. Go to `Configure` add a `description`. Now go to `Source Code Management` click `Git`  filled all the blank space all 
@@ -62,12 +53,28 @@ git pull https://github.com/Fokoue22/docker-and-jenkins-integration.git
 
 ![Alt text](images/git-cred-jenkins.png)
 
-### 4. Let look for a Plugins that will help us to publish a docker image and see the pipeline. 
+### 3. Let look for a Plugins that will help us to publish a docker image and see the pipeline. 
 1. Go to `Manage Jenkins` click on `Plugins` then go to `Available Plugins`
 2. On Available Plugins click on the search bar and type `CloudBees Docker Build and Publish` & `stage view` Select the Plugins and Install 
 4. Go to `Install Plugins` to see the docker plugin that have been install  
 ![Alt text](images/install-plugins-jenkins.png)
 ![Alt text](images/stage-view-plugins.png)
+
+### 4. Let create our first jenkins pipeline that display `Hello World!` 
+1. click on `New Item`(That means i would like to create a job)
+2. Enter an item name `docker-image-build-automation-job` select an item type `Pipeline` and press `OK`
+3. Click on the newly created job `docker-image-build-automation-job`
+4. Go to `Configure` add a `description` go down to `Pipeline` at `at the edge of Script` select `Hello World`
+5. Save and run your build by clicking on `Build Now`
+6. On your `Build History` on the left click on the first build "#1" and go to `Console Output` and you will see your result.
+
+![Alt text](images/docker-image-build-automation-job.png)
+
+7. Let go back to `Configure` of the newly created pipeline juste below the `Hello World` pipeline we created and select `Pipeline Syntax`
+8. From there let add our `git plugins` juste created above 
+9. Then click on `Generate Pipeline Script` and copy it 
+
+![Alt text](images/pipeline-syntax.png)
 
 ### 5. Now let Installed docker on our Ubuntu server in other for us to use the plugin install above linux server:
 - Take up you privilage. the first command for ubuntu and the second for linux. 
