@@ -42,6 +42,16 @@ git pull https://github.com/Fokoue22/docker-and-jenkins-integration.git
 ```
 ![Alt text](images/repo-for-jenkins.png)
 
+### 4. Let create our first jenkins pipeline that display `Hello World!` 
+1. click on `New Item`(That means i would like to create a job)
+2. Enter an item name `docker-image-build-automation-job` select an item type `Pipeline` and press `OK`
+3. Click on the newly created job `docker-image-build-automation-job`
+4. Go to `Configure` add a `description` go down to `Pipeline` at `at the edge of Script` select `Hello World`
+5. Save and run your build by clicking on `Build Now`
+6. On your `Build History` on the left click on the first build "#1" and go to `Console Output` and you will see your result.
+
+![Alt text](images/my-first-jenkins-job.png)
+
 ### 6. Let setup our Git plugin on Jenkins. This is done to link our Jenkins with our repo created on Git
 1. Create a `New Item` with name `docker-image-build` select an item type `Freestyle project` and press `OK`
 2. Click on the newly created job `my-first-jenkins-job`
