@@ -36,13 +36,13 @@ This setup ensures seamless automation from code commit to container deployment,
 ### Follow all the steps to install `JENKINS in and UBUNTU server` with the following git repo [this page](https://github.com/Fokoue22/Deploy-Jenkins-on-Ubuntu-EC2-Instance.git)
 
 
-### 5. Create a GitHub repository with index.html file and a Dockerfile. You can as well pull mu own repo. 
+### 1. Create a GitHub repository with index.html file and a Dockerfile. You can as well pull my own repo. 
 ```
 git pull https://github.com/Fokoue22/docker-and-jenkins-integration.git
 ```
 ![Alt text](images/repo-for-jenkins.png)
 
-### 4. Let create our first jenkins pipeline that display `Hello World!` 
+### 2. Let create our first jenkins pipeline that display `Hello World!` 
 1. click on `New Item`(That means i would like to create a job)
 2. Enter an item name `docker-image-build-automation-job` select an item type `Pipeline` and press `OK`
 3. Click on the newly created job `docker-image-build-automation-job`
@@ -50,7 +50,7 @@ git pull https://github.com/Fokoue22/docker-and-jenkins-integration.git
 5. Save and run your build by clicking on `Build Now`
 6. On your `Build History` on the left click on the first build "#1" and go to `Console Output` and you will see your result.
 
-![Alt text](images/my-first-jenkins-job.png)
+![Alt text](images/docker-image-build-automation-job.png)
 
 ### 6. Let setup our Git plugin on Jenkins. This is done to link our Jenkins with our repo created on Git
 1. Create a `New Item` with name `docker-image-build` select an item type `Freestyle project` and press `OK`
