@@ -259,6 +259,7 @@ pipeline {
 ![Alt text](images/jenkins-pipeline.png)
 ![Alt text](images/website-view.png)
 
+3. If you push a new version of your index.html or update your Dockerfile. Always stop all running `Containers` before running your jenkins pipeline. Use the command below for that 
 
 
 
