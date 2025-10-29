@@ -33,18 +33,8 @@ This setup ensures seamless automation from code commit to container deployment,
 - Docker Hub → Image registry for deployment
 
 ## 🪜 Implementation Steps Summary
-### Follow all the steps to install `JENKINS in and UBUNTU server` with the following git repo[this page](https://github.com/Fokoue22/Deploy-Jenkins-on-Ubuntu-EC2-Instance.git)
+### Follow all the steps to install `JENKINS in and UBUNTU server` with the following git repo [this page](https://github.com/Fokoue22/Deploy-Jenkins-on-Ubuntu-EC2-Instance.git)
 
-
-### 4. Let create our first jenkins job that display `Hello World!` 
-1. click on `New Item`(That means i would like to create a job)
-2. Enter an item name `my-first-jenkins-job` select an item type `Freestyle project` and press `OK`
-3. Click on the newly created job `my-first-jenkins-job`
-4. Go to `Configure` add a `description` go down to `Build Steps` and select `Execute shell` and add what you whan to build e.g `echo Hello World!`
-5. Save and run your build by clicking on `Build Now`
-6. On your `Build History` on the left click on the first build "#1" and go to `Console Output` and you will see your result.
-
-![Alt text](images/my-first-jenkins-job.png)
 
 ### 5. Create a GitHub repository with index.html file and a Dockerfile. You can as well pull mu own repo. 
 ```
@@ -62,11 +52,12 @@ git pull https://github.com/Fokoue22/docker-and-jenkins-integration.git
 
 ![Alt text](images/git-cred-jenkins.png)
 
-### 7. Let look for a Plugin that will help us to publish a docker image. 
+### 7. Let look for a Plugins that will help us to publish a docker image and see the pipeline. 
 1. Go to `Manage Jenkins` click on `Plugins` then go to `Available Plugins`
-2. On Available Plugins click on the search bar and type `CloudBees Docker Build and Publish` Select the Plugins and Install 
+2. On Available Plugins click on the search bar and type `CloudBees Docker Build and Publish` & `stage view` Select the Plugins and Install 
 4. Go to `Install Plugins` to see the docker plugin that have been install  
 ![Alt text](images/install-plugins-jenkins.png)
+![Alt text](images/stage-view-plugins.png)
 
 ### 8. Now let Installed docker on our Ubuntu server in other for us to use the plugin install above linux server:
 - Take up you privilage. the first command for ubuntu and the second for linux. 
