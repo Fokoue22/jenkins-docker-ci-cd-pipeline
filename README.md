@@ -260,8 +260,19 @@ pipeline {
 ![Alt text](images/website-view.png)
 
 3. If you push a new version of your index.html or update your Dockerfile. Always stop all running `Containers` before running your jenkins pipeline. Use the command below for that 
-
-
+- List all running containers:
+```
+  docker ps -a
+```
+- Stop a specific container:
+```
+  docker stop <container_id_or_name>
+```
+- Remove the stopped container:
+```
+  docker rm <container_id_or_name>
+```
+![Alt text](images/stop-container.png)
 
 ## Author
 FOKOUE THOMAS 
