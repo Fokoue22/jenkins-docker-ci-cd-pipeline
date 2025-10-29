@@ -124,53 +124,8 @@ pipeline {
 6. Go down to `Pipeline` at `at the edge of Script` and motified it as shown below
 7. Update the Souce stage credentail with your own `Generate Pipeline Script` done above
 8. Save and run your build by clicking on `Build Now`
-```
-pipeline {
-    agent any
-
-    stages {
-        stage('Source') {
-            steps {
-                echo 'Logging into our GitHub account'
-                git branch: 'main', credentialsId: 'github-cred', url: 'https://github.com/Fokoue22/docker-and-jenkins-integration.git'
-            }
-        }
-
-        stage('Build') {
-            steps {
-                echo 'Building our Docker image'
-                sh ' docker build -t fokoue/jenkins_thomas_container:v4 .'
-            }
-        }
-
-        stage('Deploy') {
-            steps {
-                echo 'Deploying our image to DockerHub'
-            }
-        }
-    }
-}
-
-```
-![Alt text](images/build-stage-dockerfile.png)
-
-### 7. Deploy Stage: let edite our Pipeline edge of Script
-1. Let go back to `Configure` of the newly created pipeline juste below the `Hello World` pipeline we created and select `Pipeline Syntax`
-2. From there let select `sh:Shell Script`
-3. On the Shell Script add the following command that will allow us to build an image based on our Dockerfile
-```
- docker build -t fokoue/jenkins_thomas_container:v4 .
-```
-
-4. Then click on `Generate Pipeline Script` and copy it 
-![Alt text](images/build-syntax.png)
-
-
-5. Let go back to `Configure` of the newly created pipeline
-6. Go down to `Pipeline` at `at the edge of Script` and motified it as shown below
-7. Update the Souce stage credentail with your own `Generate Pipeline Script` done above
-8. Save and run your build by clicking on `Build Now`
 9. Optional: let add `${BUILD_NUMBER}` to our code copy from `Global Variable Reference`. This will automaticatly add the version number to our dockerhub.
+10. `Optional:` We can also use `enviroment variables` to define some code that are contante in our code use the officail documentation [this page](https://www.jenkins.io/doc/pipeline/tour/environment/)
 ```
 pipeline {
     agent any
@@ -202,6 +157,78 @@ pipeline {
 ```
 ![Alt text](images/build-stage-dockerfile.png)
 
+### 7. Deploy Stage: let edite our Pipeline edge of Script
+1. Let go back to `Configure` of the newly created pipeline juste below the `Hello World` pipeline we created and select `Pipeline Syntax`
+2. From there let select `sh:Shell Script`
+3. On the Shell Script add the following command that will allow us to build an image based on our Dockerfile
+```
+ docker build -t fokoue/jenkins_thomas_container:v4 .
+```
+
+4. Then click on `Generate Pipeline Script` and copy it 
+![Alt text](images/build-syntax.png)
+
+
+5. Let go back to `Configure` of the newly created pipeline
+6. Go down to `Pipeline` at `at the edge of Script` and motified it as shown below
+7. Update the Souce stage credentail with your own `Generate Pipeline Script` done above
+8. Save and run your build by clicking on `Build Now`
+9. Optional: let add `${BUILD_NUMBER}` to our code copy from `Global Variable Reference`. This will automaticatly add the version number to our dockerhub.
+10. `Optional:` We can also use `enviroment variables` to define some code that are contante in our code use the officail documentation [this page](https://www.jenkins.io/doc/pipeline/tour/environment/)
+```
+
+
+```
+![Alt text](images/)  
+
+### . Deploy Stage: let edite our Pipeline edge of Script
+1. Let go back to `Configure` of the newly created pipeline juste below the `Hello World` pipeline we created and select `Pipeline Syntax`
+2. From there let select `sh:Shell Script`
+3. On the Shell Script add the following command that will allow us to build an image based on our Dockerfile
+```
+ docker build -t fokoue/jenkins_thomas_container:v4 .
+```
+
+4. Then click on `Generate Pipeline Script` and copy it 
+![Alt text](images/build-syntax.png)
+
+
+5. Let go back to `Configure` of the newly created pipeline
+6. Go down to `Pipeline` at `at the edge of Script` and motified it as shown below
+7. Update the Souce stage credentail with your own `Generate Pipeline Script` done above
+8. Save and run your build by clicking on `Build Now`
+9. Optional: let add `${BUILD_NUMBER}` to our code copy from `Global Variable Reference`. This will automaticatly add the version number to our dockerhub.
+10. `Optional:` We can also use `enviroment variables` to define some code that are contante in our code use the officail documentation [this page](https://www.jenkins.io/doc/pipeline/tour/environment/)
+```
+pipeline {
+    agent any
+
+    stages {
+        stage('Source') {
+            steps {
+                echo 'Logging into our GitHub account'
+                git branch: 'main', credentialsId: 'github-cred', url: 'https://github.com/Fokoue22/docker-and-jenkins-integration.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Building our Docker image'
+                sh ' docker build -t fokoue/jenkins_thomas_container:v${BUILD_NUMBER} .'
+                sh 'docker images'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Deploying our image to DockerHub'
+            }
+        }
+    }
+}
+
+```
+![Alt text](images/build-stage-dockerfile.png)
 
 ### 5. Now let Installed docker on our Ubuntu server in other for us to use the plugin install above linux server:
 - Take up you privilage. the first command for ubuntu and the second for linux. 
