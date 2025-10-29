@@ -129,7 +129,9 @@ pipeline {
 ```
 pipeline {
     agent any
-
+    environment {
+        DOCKERHUB_REPO = 'fokoue/jenkins_thomas_container'
+    }
     stages {
         stage('Source') {
             steps {
@@ -141,7 +143,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building our Docker image'
-                sh ' docker build -t fokoue/jenkins_thomas_container:v${BUILD_NUMBER} .'
+                sh ' docker build -t ${DOCKERHUB_REPO}:v${BUILD_NUMBER} .'
                 sh 'docker images'
             }
         }
