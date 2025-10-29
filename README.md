@@ -208,7 +208,8 @@ pipeline {
 }
 
 ```
-![Alt text](images/deploy-stage-dockerhub.png)  
+![Alt text](images/deploy-stage-dockerhub.png) 
+![Alt text](images/dockerhub-deployed.png) 
 
 
 ### 5. Now let Installed docker on our Ubuntu server in other for us to use the plugin install above linux server:
