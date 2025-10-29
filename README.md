@@ -76,7 +76,7 @@ git pull https://github.com/Fokoue22/docker-and-jenkins-integration.git
 
 ![Alt text](images/pipeline-syntax.png)
 
-### 5. Now let edite our Pipeline edge of Script
+### 5. Source Stage: let edite our Pipeline edge of Script
 1. Let go back to `Configure` of the newly created pipeline
 2. Go down to `Pipeline` at `at the edge of Script` and motified it as shown below
 3. Update the Souce stage credentail with your own `Generate Pipeline Script` done above 
@@ -107,6 +107,15 @@ pipeline {
 }
 ```
 ![Alt text](images/source-stage-git.png)
+
+### 6. Source Stage: let edite our Pipeline edge of Script
+1. Let go back to `Configure` of the newly created pipeline
+2. Go down to `Pipeline` at `at the edge of Script` and motified it as shown below
+3. Update the Souce stage credentail with your own `Generate Pipeline Script` done above
+
+
+
+
 
 ### 5. Now let Installed docker on our Ubuntu server in other for us to use the plugin install above linux server:
 - Take up you privilage. the first command for ubuntu and the second for linux. 
