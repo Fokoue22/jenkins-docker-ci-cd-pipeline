@@ -257,7 +257,7 @@ pipeline {
 }
 ```
 ![Alt text](images/jenkins-pipeline.png)
-![Alt text](images/jenkins-pipeline.png)
+![Alt text](images/website-view.png)
 
 
 ### 5. Now let Installed docker on our Ubuntu server in other for us to use the plugin install above linux server:
